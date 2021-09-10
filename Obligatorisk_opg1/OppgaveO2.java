@@ -6,10 +6,13 @@ public class OppgaveO2 {
         int p=-1; char k= '\0';
         for(int i=1; i<=10; i++){
             System.out.println("Skriv inn poengsummen for å få ut karakter");
-            try{p = sc.nextInt();}
-            catch(Exception e){p = -1; System.out.println("Ugyldig poengsum, skriv inn på nytt");}
+            try{
+                p = sc.nextInt();
+            }
+            catch(Exception e){
+                p = -1; System.out.println("Ugyldig poengsum, skriv inn på nytt");
+            }
             while(p > 100 || p < 0) {
-
                 sc.next();
                 try {
                     p = sc.nextInt();
