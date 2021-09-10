@@ -7,7 +7,6 @@ public class OppgaveO2 {
         for(int i=1; i<=10; i++){
             System.out.println("Skriv inn poengsummen for å få ut karakter");
             p = sc.nextInt();
-            System.out.println(p);
             while(p > 100 || p < 0) {
                 System.out.println("Ugyldig poengsum, skriv inn på nytt");
                 try{p = sc.nextInt();}
