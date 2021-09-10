@@ -3,8 +3,9 @@ public class OppgaveO2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int p=-1; char k= '\0';
-        System.out.println("Skriv inn poengsummen din for karakter");
-
+        for (int i=0; i<10; i++){
+        System.out.println("Skriv inn poengsummen for å få utgitt karakter");
+        
         while(p > 100 || p < 0) {
             try{
                 p = sc.nextInt();}
@@ -18,7 +19,7 @@ public class OppgaveO2 {
         else if (p - 49 > 0)k = 'D';
         else if (p - 39 > 0)k = 'E';
         else                k = 'F';
-        System.out.println("Din karakter er: " + k);
-
+        System.out.println("Karakteren er: " + k);
+        }
     }
 }
