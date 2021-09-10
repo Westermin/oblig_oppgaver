@@ -1,18 +1,33 @@
-import static javax.swing.JOptionPane.showInputDialog;
-public class OppgaveO1 {
-    public static void main(String[] args) {
-        int input = Integer.parseInt(showInputDialog("Hva er bruttoinntekten? "));
-        if(input <= 164100){                                             // For lite inntekt
-            System.out.println("Du har for lite inntekt for å skatte");
-            System.exit(1);
-        }
-        else if (input > 164100 && input <= 230950) input *= 0.0093;   // 0,93%  Trinn 1
-        else if (input > 230950 && input <=580650)  input *= 0.0241;   // 2,41%  Trinn 2
-        else if (input > 580650 && input <=934050)  input *= 0.01152;  // 11,52% Trinn 3
-        else if (input >=934050)                    input *= 0.01452;  // 14,52% Trinn 4
+import java.text.DecimalFormat;
+import java.util.Scanner;
 
+public class OppgaveO1
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("#.##");
+        float input = 0;
+        System.out.println("Hva er bruttoinntekten din? ");
 
-        System.out.println("Du er nødt til å skatte " + input + " NOK");
+            while (input <= 0)
+            {
+                try {input = sc.nextFloat();}
+                catch (Exception e) {System.out.println("Ugyldig verdi, skriv inn på nytt"); sc.next();}
+            }
+
+            if     (input - 1021550>= 0)input *= 0.162; // 16,2%
+            else if(input - 651250 >= 0)input *= 0.132; //13,2%
+            else if(input - 260100 >= 0)input *= 0.04;  // 4%
+            else if(input - 184800 >= 0)input *= 0.017; // 1,7%
+            else if(input < 184800)
+            {
+                System.out.println("Din inntekt er for lav til å bli skattet");
+                System.exit(1);
+            }
+        System.out.println("Skatt du må innbetale: " +df.format(input)+" NOK");
+        System.exit(1);
     }
+
 
 }
