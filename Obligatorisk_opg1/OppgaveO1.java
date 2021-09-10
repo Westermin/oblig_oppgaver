@@ -8,7 +8,7 @@ public class OppgaveO1
         Scanner sc = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("#.##");
         float input = 0;
-        System.out.println("Vengligst skriv et tall");
+        System.out.println("Venglist skriv inn bruttoinntekten din: ");
 
             while (input <= 0)
             {
@@ -25,7 +25,7 @@ public class OppgaveO1
                 System.out.println("Din inntekt er for lav til å bli skattet");
                 System.exit(1);
             }
-        System.out.println("Skatt du må betale: " +df.format(input));
+        System.out.println("Du må betale: " +df.format(input)+ " NOK i skatt.");
         System.exit(1);
     }
 
