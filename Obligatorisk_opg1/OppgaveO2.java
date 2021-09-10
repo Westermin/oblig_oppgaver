@@ -1,18 +1,20 @@
 
 import java.util.Scanner;
 public class OppgaveO2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         int p=-1; char k= '\0';
         for(int i=1; i<=10; i++){
             System.out.println("Skriv inn poengsummen for å få ut karakter");
-            p = sc.nextInt();
+            try{p = sc.nextInt();}
+            catch(Exception e){p = -1; System.out.println("Ugyldig poengsum, skriv inn på nytt");}
             while(p > 100 || p < 0) {
-                System.out.println("Ugyldig poengsum, skriv inn på nytt");
-                try{p = sc.nextInt();}
-                catch(Exception e){
+
+                sc.next();
+                try {
+                    p = sc.nextInt();
+                } catch (Exception ee) {
                     System.out.println("Ugyldig poengsum, skriv inn på nytt");
-                    sc.next();
                 }
             }
             if      (p - 89 > 0)k = 'A';
